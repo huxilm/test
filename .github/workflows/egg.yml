@@ -23,3 +23,8 @@ jobs:
                  sleep 5
                  curl http://localhost:4173 || exit 1
                  kill $PID
+            - name: arrage files
+              uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                branch: gh-pages
+                folder: /home/runner/work/test/test/demo/vite-project/dist
