@@ -12,7 +12,7 @@ jobs:
                 pwd  # Linux/Mac 显示当前路径
                 ls -la  # 列出当前目录下的所有文件
             - name: locate vite-project
-              run: cd demo\vite-project
+              run: cd /home/runner/work/test/test/demo/vite-project
             - name: install dependencies
               run: pnpm install
             - name: build project
