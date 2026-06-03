@@ -11,13 +11,11 @@ jobs:
                 echo "Current working directory: ${{ github.workspace }}"
                 pwd  # Linux/Mac 显示当前路径
                 ls -la  # 列出当前目录下的所有文件
-            - name: locate vite-project
-              run: cd /home/runner/work/test/test/demo/vite-project
-            - name: install dependencies
-              run: pnpm install
-            - name: build project
-              run: pnpm build
+            - name: locate vite-project & install dependencies & build & preview
               env:
                 NODE_ENV: production
-            - name: run preview
-              run: pnpm preview
+              run: |
+                 cd /home/runner/work/test/test/demo/vite-project
+                 pnpm install
+                 pnpm build
+                 pnpm preview
