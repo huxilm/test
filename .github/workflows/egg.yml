@@ -1,1 +1,14 @@
 on: push
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Hello
+              run: echo "GitHub Actions is enabled!"
+    job2:
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Check Node.js version
+              run: node --version
