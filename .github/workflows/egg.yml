@@ -4,11 +4,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Hello
-              run: echo "GitHub Actions is enabled!"
-    job2:
-        runs-on: windows-latest
-        steps:
-            - uses: actions/checkout@v4
-            - name: Check Node.js version
-              run: node --version
+            - name: pnpm
+              run: npm install pnpm@latest -g
+            - name: check working directory and files
+              run: |
+                echo "Current working directory: ${{ github.workspace }}"
+                pwd  # Linux/Mac 显示当前路径
+                ls -la  # 列出当前目录下的所有文件
